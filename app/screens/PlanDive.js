@@ -1,4 +1,5 @@
 import React from 'react';
+import { StatusBar } from 'expo-status-bar'
 import { StyleSheet, View, Text } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 
@@ -6,6 +7,7 @@ export class PlanDive extends React.Component{
     render() {
         return(
             <View style = {styles.planDiveContainer}>
+                <StatusBar style="auto" />
                 <ScrollView>
                     <Text style = {styles.text}>
                         This is the page that will be used to plan a dive
