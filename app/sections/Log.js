@@ -1,24 +1,24 @@
-import React from 'react';
-import { StyleSheet, Button, View, Text } from 'react-native';
+import React, { Component } from 'react'
+import { StyleSheet, Text, View } from 'react-native'
 import { TouchableHighlight, TouchableOpacity } from 'react-native-gesture-handler';
 
 import {navigate} from '../../rootNavigation';
 
-export class Plan extends React.Component {
+export class Log extends Component {
     handleNavigation = () => {
-        navigate('planDive', null);
+        navigate('logDive', null);
     }
 
     render() {
         return(
             <View style = {styles.container}>
                 <Text style = {styles.title}>
-                    Plan a Dive
+                    Plan a Dive (Add some kind of image)
                 </Text>
                 <TouchableHighlight
                     onPress = {this.handleNavigation}
                     style = {styles.button}>
-                        <Text>Button</Text>
+                        <Text>Button (Add some kind of image) </Text>
                 </TouchableHighlight>
             </View>
         )
@@ -26,7 +26,7 @@ export class Plan extends React.Component {
 }
 
 const styles = StyleSheet.create({
-    container: {
+    logContainer: {
         marginTop: 10,
         marginBottom: 10,
     },
@@ -50,4 +50,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default Plan;
+export default Log;
