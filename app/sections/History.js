@@ -1,19 +1,19 @@
-import React from 'react';
-import { StyleSheet, Button, View, Text } from 'react-native';
+import React, { Component } from 'react'
+import { StyleSheet, Text, View } from 'react-native'
 import { TouchableHighlight, TouchableOpacity } from 'react-native-gesture-handler';
 
 import {navigate} from '../../rootNavigation';
 
-export class Plan extends React.Component {
+export class History extends Component {
     handleNavigation = () => {
-        navigate('planDive', null);
+        navigate('history', null);
     }
 
     render() {
-        return(
+        return (
             <View style = {styles.container}>
                 <Text style = {styles.title}>
-                    Plan a Dive
+                    View Dive History
                 </Text>
                 <TouchableHighlight
                     onPress = {this.handleNavigation}
@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     title: {
+        alignSelf: 'flex-start',
         color: '#ffffff',
         fontSize: 24,
         fontWeight: 'bold',
@@ -50,4 +51,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default Plan;
+export default History;

@@ -8,7 +8,9 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import Home from './app/screens/Home';
 import PlanDive from './app/screens/PlanDive';
+import LogDive from './app/screens/LogDive';
 import { navigationRef } from './rootNavigation';
+import DiveHistory from './app/screens/DiveHistory';
 
 function App() {
   const Stack = createStackNavigator();
@@ -25,6 +27,16 @@ function App() {
           name = "planDive"
           component = {PlanDive}
           options = {{title: 'Plan a Dive', headerShown: true, gestureEnabled: true}}
+        />
+        <Stack.Screen
+          name = "logDive"
+          component = {LogDive}
+          options = {{title: 'Log a Dive', headerShown: true, gestureEnabled: true}}
+        />
+        <Stack.Screen
+          name = "history"
+          component = {DiveHistory}
+          options = {{title: 'Dive History', headerShown: true, gestureEnabled: true}}
         />
       </Stack.Navigator>
     </NavigationContainer>
