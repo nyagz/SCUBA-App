@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { TouchableHighlight, TouchableOpacity } from 'react-native-gesture-handler';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import {navigate} from '../../rootNavigation';
 
@@ -21,7 +22,10 @@ export class History extends Component {
                 <TouchableHighlight
                     onPress = {this.handleNavigation}
                     style = {styles.button}>
-                        <Text>History</Text>
+                        <View style={styles.buttonInfo}>
+                            <MaterialCommunityIcons name="history" size={34} color="black" />
+                            <Text style={styles.buttonText}>History</Text>
+                        </View>
                 </TouchableHighlight>
             </View>
         )
@@ -45,12 +49,23 @@ const styles = StyleSheet.create({
         backgroundColor: '#48BBEC',
         borderColor: '#48BBEC', //light blue
         alignSelf: 'stretch', //Let's button go the full width of flex box
-        margin: 10,
+        margin: 15,
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 5,
         flex: 1,
         marginBottom: 20,
+    },
+    buttonInfo: {
+        margin: 10,
+        flexDirection: 'row',
+        alignContent: 'flex-start',
+    },
+    buttonText: {
+        fontSize: 26,
+        justifyContent: 'flex-start',
+        marginLeft: 20,
+        fontWeight: 'bold',
     },
     description: {
         color: '#ffffff',

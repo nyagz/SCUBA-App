@@ -16,8 +16,11 @@ export class PlanDive extends React.Component{
                 <Header />
                 <View style={styles.noHeader}>
                     <ScrollView>
+                        <Text style={styles.miniHeader}>
+                            Ready to dive!
+                        </Text>
                         <Text style = {styles.text}>
-                            This is the page that will be used to plan a dive. Dive's are planned using ..........
+                            Dive's are planned using ..........
                         </Text>
                         <Text style={styles.text}>
                             The dives are planned based on your gas used, the maximum depth of your dive & the planned length of the dive
@@ -44,6 +47,12 @@ const styles = StyleSheet.create({
         backgroundColor: '#000000',
         alignItems: 'stretch',
         justifyContent: 'flex-start',
+    },
+    miniHeader: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        marginTop: 20,
+        color: '#ffffff',
     },
     noHeader: {
         flex: 14,

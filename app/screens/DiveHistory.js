@@ -7,6 +7,7 @@ import {navigate} from '../../rootNavigation';
 import NoDives from '../sections/NoDives';
 import { Header } from '../sections/Header';
 import { StatusBar } from 'expo-status-bar';
+import LogButton from '../sections/LogButton';
 
 // Examples for how to use the tables found here:
 // https://www.npmjs.com/package/react-native-table-component
@@ -48,11 +49,7 @@ export class DiveHistory extends Component {
                         </TableWrapper>
                     </Table>
                     <Text style={styles.text}>Adding a new dive will go here</Text>
-                    <TouchableHighlight
-                        onPress = {this.handleNavigation}
-                        style = {styles.button}>
-                            <Text>Add a dive log</Text>
-                    </TouchableHighlight>
+                    <LogButton />
                     <Text style={styles.text}> This page will show all past dive history </Text>
                     <Text style={styles.text}> It should also show the total number of dives saved</Text>
                 </ScrollView>

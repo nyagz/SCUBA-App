@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { TouchableHighlight, TouchableOpacity } from 'react-native-gesture-handler';
+import { AntDesign } from '@expo/vector-icons';
 
 import {navigate} from '../../rootNavigation';
+import LogButton from './LogButton';
 
 export class Log extends Component {
     handleNavigation = () => {
@@ -18,11 +20,7 @@ export class Log extends Component {
                 <Text style={styles.description}>
                     Log your dive data from a recent dive to view later in your dive history
                 </Text>
-                <TouchableHighlight
-                    onPress = {this.handleNavigation}
-                    style = {styles.button}>
-                        <Text>Log</Text>
-                </TouchableHighlight>
+                <LogButton />
             </View>
         )
     }
@@ -39,16 +37,30 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginBottom: 10,
     },
+    buttonInfo: {
+        margin: 10,
+        flexDirection: 'row',
+        alignContent: 'flex-start',
+    },
+    buttonAlign: {
+        flex: 2,
+    },
+    buttonText: {
+        fontSize: 26,
+        justifyContent: 'flex-start',
+        marginLeft: 20,
+        fontWeight: 'bold',
+    },
     button: {
         height: 50,
         backgroundColor: '#48BBEC',
         borderColor: '#48BBEC', //light blue
         alignSelf: 'stretch', //Let's button go the full width of flex box
-        margin: 10,
+        margin: 15,
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 5,
-        flex: 1,
+        flex: 4,
         marginBottom: 20,
     },
     description: {
