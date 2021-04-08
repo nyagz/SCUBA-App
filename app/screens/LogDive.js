@@ -2,13 +2,15 @@ import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Text }from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
+import { Header } from '../sections/Header';
 
 export class LogDive extends React.Component{
     render() {
         return(
             <View style={styles.logDiveContainer}>
-                <StatusBar />
+                <StatusBar style="inverted" />
                 <ScrollView>
+                    <Header />
                     <Text style={styles.text}>
                         This is the page that will be used to log a past dive
                     </Text>

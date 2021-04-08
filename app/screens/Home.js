@@ -12,7 +12,7 @@ export class Home extends React.Component{
     render(){
         return(
             <View style={styles.homeContainer}>
-                <StatusBar style="auto" />
+                <StatusBar style="inverted" />
                 <Header />
                 <View style={styles.menu}>
                     <ScrollView>
@@ -31,7 +31,7 @@ export class Home extends React.Component{
 
 const styles = StyleSheet.create({
     homeContainer:{
-        flex: 8,
+        flex: 15,
         backgroundColor: '#000000',
         alignItems: 'stretch',
     },
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
         color: '#ffffff',
     },
     menu: {
-        flex: 7,
+        flex: 14,
         alignItems: 'stretch',
     },
     text: {

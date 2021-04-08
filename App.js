@@ -26,17 +26,17 @@ function App() {
         <Stack.Screen 
           name = "planDive"
           component = {PlanDive}
-          options = {{title: 'Plan a Dive', headerShown: true, gestureEnabled: true}}
+          options = {{title: 'Plan a Dive', headerShown: false, gestureEnabled: true}}
         />
         <Stack.Screen
           name = "logDive"
           component = {LogDive}
-          options = {{title: 'Log a Dive', headerShown: true, gestureEnabled: true}}
+          options = {{title: 'Log a Dive', headerShown: false, gestureEnabled: true}}
         />
         <Stack.Screen
           name = "history"
           component = {DiveHistory}
-          options = {{title: 'Dive History', headerShown: true, gestureEnabled: true}}
+          options = {{title: 'Dive History', headerShown: false, gestureEnabled: true}}
         />
       </Stack.Navigator>
     </NavigationContainer>
