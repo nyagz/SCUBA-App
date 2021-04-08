@@ -6,7 +6,6 @@ import { ScrollView } from 'react-native-gesture-handler';
 import { Header } from '../sections/Header';
 
 // TODO: Work on next
-// Add vector images
 
 export class PlanDive extends React.Component{
     render() {
