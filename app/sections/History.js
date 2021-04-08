@@ -15,10 +15,13 @@ export class History extends Component {
                 <Text style = {styles.title}>
                     View Dive History
                 </Text>
+                <Text style={styles.description}>
+                    View the history of all of your past logged dives.
+                </Text>
                 <TouchableHighlight
                     onPress = {this.handleNavigation}
                     style = {styles.button}>
-                        <Text>Button</Text>
+                        <Text>History</Text>
                 </TouchableHighlight>
             </View>
         )
@@ -48,6 +51,11 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         flex: 1,
         marginBottom: 20,
+    },
+    description: {
+        color: '#ffffff',
+        fontSize: 12,
+        marginBottom: 10,
     },
 })
 

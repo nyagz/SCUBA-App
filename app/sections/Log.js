@@ -13,12 +13,15 @@ export class Log extends Component {
         return(
             <View style = {styles.container}>
                 <Text style = {styles.title}>
-                    Plan a Dive (Add some kind of image)
+                    Log a dive
+                </Text>
+                <Text style={styles.description}>
+                    Log your dive data from a recent dive to view later in your dive history
                 </Text>
                 <TouchableHighlight
                     onPress = {this.handleNavigation}
                     style = {styles.button}>
-                        <Text>Button (Add some kind of image) </Text>
+                        <Text>Log</Text>
                 </TouchableHighlight>
             </View>
         )
@@ -47,6 +50,11 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         flex: 1,
         marginBottom: 20,
+    },
+    description: {
+        color: '#ffffff',
+        fontSize: 12,
+        marginBottom: 10,
     },
 })
 

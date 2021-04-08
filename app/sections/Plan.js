@@ -15,10 +15,13 @@ export class Plan extends React.Component {
                 <Text style = {styles.title}>
                     Plan a Dive
                 </Text>
+                <Text style={styles.description}>
+                    Plan an upcomming dive based on depth and time of dive. Will receive a log of decompression stops to take while ascending
+                </Text>
                 <TouchableHighlight
                     onPress = {this.handleNavigation}
                     style = {styles.button}>
-                        <Text>Button</Text>
+                        <Text>Plan</Text>
                 </TouchableHighlight>
             </View>
         )
@@ -47,6 +50,11 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         flex: 1,
         marginBottom: 20,
+    },
+    description: {
+        color: '#ffffff',
+        fontSize: 12,
+        marginBottom: 10,
     },
 })
 
