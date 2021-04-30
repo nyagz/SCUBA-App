@@ -1,9 +1,10 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar'
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, Modal } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 
 import { Header } from '../sections/Header';
+import PlanModal from '../sections/PlanModal';
 
 // TODO: Work on next
 
@@ -13,13 +14,14 @@ export class PlanDive extends React.Component{
             <View style = {styles.planDiveContainer}>
                 <StatusBar style="inverted" />
                 <Header />
+                <PlanModal />
                 <View style={styles.noHeader}>
                     <ScrollView>
                         <Text style={styles.miniHeader}>
                             Ready to dive!
                         </Text>
                         <Text style = {styles.text}>
-                            Dive's are planned using ..........
+                            Dive's are planned using Bühlmann's decompression algorithm
                         </Text>
                         <Text style={styles.text}>
                             The dives are planned based on your gas used, the maximum depth of your dive & the planned length of the dive

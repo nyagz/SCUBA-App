@@ -8,6 +8,7 @@ import NoDives from '../sections/NoDives';
 import { Header } from '../sections/Header';
 import { StatusBar } from 'expo-status-bar';
 import LogButton from '../sections/LogButton';
+import HistoryModal from '../sections/HistoryModal';
 
 // Examples for how to use the tables found here:
 // https://www.npmjs.com/package/react-native-table-component
@@ -36,6 +37,7 @@ export class DiveHistory extends Component {
                 <StatusBar style="inverted" />
                 <ScrollView>
                     <Header />
+                    <HistoryModal />
                     <Text style={styles.text}>
                         If diver has not logged any dives before
                     </Text>

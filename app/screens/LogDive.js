@@ -4,6 +4,7 @@ import { StyleSheet, View, Text }from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { Header } from '../sections/Header';
 import { Inout, Input } from 'galio-framework';
+import LogModal from '../sections/LogModal';
 
 export class LogDive extends React.Component{
     render() {
@@ -12,6 +13,7 @@ export class LogDive extends React.Component{
                 <StatusBar style="inverted" />
                 <ScrollView>
                     <Header />
+                    <LogModal />
                     <Text style={styles.miniHeader}>
                         Hope you enjoyed your dive!
                     </Text>
