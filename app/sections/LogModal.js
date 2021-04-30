@@ -4,7 +4,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 
 export class LogModal extends Component {
     state = {
-        modalVisible: true
+        modalVisible: false
     }
 
     setModalVisible = (visible) => {
@@ -31,7 +31,10 @@ export class LogModal extends Component {
                             You've finished a dive, time to log it!
                         </Text>
                         <Text style={styles.modalText}>
-                            On this page you will be able to log all of your dive information.
+                            Think of this page as an equivalent to your dive log book. We all know how important our dive logs are. Whether it's to know what number dive we've reached to know if we qualify to try and get a new dive qualification or we just want to try to remember what we saw on an old dive it's good to keep track of all of the dives that you've had.
+                        </Text>
+                        <Text style={styles.modalText}>
+                            You can put all of that information here. All dives logged can be accessed from the history page so that you can reminise on all past dives.
                         </Text>
                         <Text style={styles.modalText}>
                             
@@ -49,7 +52,7 @@ export class LogModal extends Component {
                     style={[styles.button, styles.buttonOpen]}
                     onPress={() => this.setModalVisible(true)}
                 >
-                    <Text style={styles.textStyle}>Show Planning Instructions</Text>
+                    <Text style={styles.textStyle}>Show Instructions</Text>
                 </Pressable>
             </View>
         )

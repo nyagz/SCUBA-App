@@ -4,7 +4,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 
 export class HistoryModal extends Component {
     state = {
-        modalVisible: true
+        modalVisible: false
     }
 
     setModalVisible = (visible) => {
@@ -55,7 +55,7 @@ export class HistoryModal extends Component {
                     style={[styles.button, styles.buttonOpen]}
                     onPress={() => this.setModalVisible(true)}
                 >
-                    <Text style={styles.textStyle}>Show Planning Instructions</Text>
+                    <Text style={styles.textStyle}>Show Instructions</Text>
                 </Pressable>
             </View>
         )
