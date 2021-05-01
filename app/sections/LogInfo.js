@@ -11,23 +11,32 @@ export class LogInfo extends Component {
     constructor(props){
         super(props);
 
-        this.state = {diveNumber: Number};
+        this.state = {
+            diveNumber: Number,
+            name: '',
+            country: '',
+            location: '',
+            chosenDate: new Date(),
+            timeIn: new Date(),
+            timeOut: new Date(),
+            bottomTime: Number,
+
+        };
         this.setDiveNumber = this.setDiveNumber.bind(this);
 
-        this.state = {name: ''};
         this.setName = this.setName.bind(this);
 
-        this.state = {country: ''};
         this.setCountry = this.setCountry.bind(this);
 
-        this.state = {location: ''};
         this.setLocation = this.setLocation.bind(this);
 
-        this.state = {chosenDate: new Date()};
         this.setDate = this.setDate.bind(this);
 
-        this.state = {timeIn: new Date()};
         this.setTimeIn = this.setTimeIn.bind(this);
+
+        this.setTimeOut = this.setTimeOut.bind(this);
+
+        this.setBottomTime = this.setBottomTime.bind(this);
     }
 
     setDiveNumber(newDiveNumber){
@@ -42,6 +51,10 @@ export class LogInfo extends Component {
         this.setState({timeIn: new Date(newTimeIn)})
     }
 
+    setTimeOut(newTimeOut){
+        this.setState({timeOut: new Date(newTimeOut)})
+    }
+
     setName(newName){
         this.setState({name: newName});
     }
@@ -53,6 +66,10 @@ export class LogInfo extends Component {
 
     setLocation(newLocation){
         this.setState({location: newLocation});
+    }
+
+    setBottomTime(newBottomTime){
+        this.setState({bottomTime: newBottomTime})
     }
 
     render() {
@@ -81,7 +98,7 @@ export class LogInfo extends Component {
                     Date:
                 </Text>
                 <DateTimePicker 
-                    value={new Date}
+                    value={this.state.chosenDate}
                     maximumDate={new Date}
                     mode='date'
                     display='default'
@@ -113,7 +130,10 @@ export class LogInfo extends Component {
                             mode="time"
                             display="default"
                             is24Hour={true}
-                            maximumDate={new Date}
+                            maximumDate={this.state.timeOut}
+                            onChange={(event, selectedDate) => {
+                                this.setTimeIn(new Date(selectedDate));
+                            }}
                         />
                     </View>
                     <View style={styles.time}>
@@ -121,14 +141,26 @@ export class LogInfo extends Component {
                             Time Out:
                         </Text>
                         <DateTimePicker
-                            value={this.state.timeIn}
+                            value={this.state.timeOut}
                             mode="time"
                             display="default"
                             is24Hour={true}
+                            minimumDate={this.state.timeIn}
                             maximumDate={new Date}
+                            onChange={(event, selectedDate) => {
+                                this.setTimeOut(new Date(selectedDate));
+                            }}
                         />
                     </View>
                 </View>
+                <Text style={styles.infoTitle}>
+                    Bottom time:
+                </Text>
+                <Input 
+                    placeholder="Bottom time"
+                    keyboardType="numeric"
+                    onChangeText={this.setBottomTime}
+                />
             </View>
         )
     }
