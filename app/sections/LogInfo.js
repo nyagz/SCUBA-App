@@ -11,6 +11,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 
 // TODO: Make countries auto complete
 // TODO: Turn form into accordion to simplify
+// FIXME: Work around for bottomTime and Depth
 export class LogInfo extends Component {
     constructor(props){
         super(props);
@@ -23,8 +24,8 @@ export class LogInfo extends Component {
             chosenDate: new Date(),
             timeIn: new Date(),
             timeOut: new Date(),
-            bottomTime: Number,
-            depth: Number,
+            bottomTime: Number = 0,
+            depth: Number = 0,
             visibility: '',
             airTemp: Number,
             surfaceTemp: Number,
@@ -103,8 +104,12 @@ export class LogInfo extends Component {
         this.setState({bottomTime: newBottomTemp});
     }
 
-    handleButton(){
-        Alert.alert("Figure out what I wanna do here")
+    handleSaveButton(){
+        if(this.state.name === "" || this.state.country === "" || this.state.location === "" || this.state.bottomTime === 0 || this.state.depth === 0){
+            Alert.alert("You must fill all mandatory fields before saving your dive log")
+        } else{
+            Alert.alert("Figure out what I need to do here")
+        }
     }
 
     render() {
@@ -157,7 +162,7 @@ export class LogInfo extends Component {
                         </Text>
                         <Input 
                             placeholder="Country"
-                            onChangeText={(text) => findCountry(text)}
+                            onChangeText={this.setCountry}
                             returnKeyType="done"
                         />
                     </View>
@@ -266,7 +271,7 @@ export class LogInfo extends Component {
                 </View>
                 <Button 
                     title="Add Log"
-                    onPress={this.handleButton}
+                    onPress={() => this.handleSaveButton()}
                     style={styles.button}
                 />
             </KeyboardAwareScrollView>
