@@ -14,9 +14,9 @@ export class PlanDive extends React.Component{
             <View style = {styles.planDiveContainer}>
                 <StatusBar style="inverted" />
                 <Header />
-                <PlanModal />
                 <View style={styles.noHeader}>
                     <ScrollView>
+                        <PlanModal />
                         <Text style={styles.miniHeader}>
                             Ready to dive!
                         </Text>

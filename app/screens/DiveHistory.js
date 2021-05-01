@@ -30,13 +30,15 @@ export class DiveHistory extends Component {
         navigate('planDive', null);
     }
 
+    //TODO: Chane to using accordian's, table will have way too much info
+
     render() {
         const state = this.state;
         return (
             <View style={styles.historyContainer}>
                 <StatusBar style="inverted" />
+                <Header />
                 <ScrollView>
-                    <Header />
                     <HistoryModal />
                     <Text style={styles.text}>
                         If diver has not logged any dives before
