@@ -8,6 +8,8 @@ import NoDives from '../sections/NoDives';
 import { Header } from '../sections/Header';
 import { StatusBar } from 'expo-status-bar';
 import LogButton from '../sections/LogButton';
+import HistoryModal from '../sections/HistoryModal';
+import HistoryInfo from '../sections/HistoryInfo';
 
 // Examples for how to use the tables found here:
 // https://www.npmjs.com/package/react-native-table-component
@@ -29,13 +31,16 @@ export class DiveHistory extends Component {
         navigate('planDive', null);
     }
 
+    //TODO: Chane to using accordian's, table will have way too much info
+
     render() {
         const state = this.state;
         return (
             <View style={styles.historyContainer}>
                 <StatusBar style="inverted" />
+                <Header />
                 <ScrollView>
-                    <Header />
+                    <HistoryModal />
                     <Text style={styles.text}>
                         If diver has not logged any dives before
                     </Text>
@@ -52,6 +57,7 @@ export class DiveHistory extends Component {
                     <LogButton />
                     <Text style={styles.text}> This page will show all past dive history </Text>
                     <Text style={styles.text}> It should also show the total number of dives saved</Text>
+                    <HistoryInfo />
                 </ScrollView>
             </View>
         )

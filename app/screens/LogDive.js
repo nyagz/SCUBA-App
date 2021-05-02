@@ -3,17 +3,27 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Text }from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { Header } from '../sections/Header';
+import {Input } from 'galio-framework';
+import LogModal from '../sections/LogModal';
+import LogInfo from '../sections/LogInfo';
+import Footer from '../sections/Footer';
 
 export class LogDive extends React.Component{
     render() {
         return(
             <View style={styles.logDiveContainer}>
                 <StatusBar style="inverted" />
+                <Header />
                 <ScrollView>
-                    <Header />
-                    <Text style={styles.text}>
-                        This is the page that will be used to log a past dive
+                    <LogModal />
+                    <Text style={styles.miniHeader}>
+                        Hope you enjoyed your dive!
                     </Text>
+                    <Text style={styles.text}>
+                        Now log it so that you can see it later in your history
+                    </Text>
+                    <LogInfo />
+                    <Footer />
                 </ScrollView>
             </View>
         )
@@ -27,9 +37,26 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+    formContainer:{
+        flex: 1,
+    },
+    miniHeader: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        marginTop: 20,
+        color: '#ffffff',
+    },
     text: {
         color: '#ffffff',
-    }
+    },
+    logInfo: {
+        justifyContent: 'center',
+        alignContent: 'stretch',
+    },
+    formTitle: {
+        color: '#ffffff',
+        fontWeight: 'bold',
+    },
 })
 
 export default LogDive;
