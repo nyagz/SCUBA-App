@@ -8,10 +8,26 @@ import { ScrollView, TouchableWithoutFeedback } from 'react-native-gesture-handl
 import Autocomplete from 'react-native-autocomplete-input';
 import { Row } from 'react-native-table-component';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { RadioButton } from 'react-native-paper';
+import { RadioGroup } from 'react-native-radio-buttons-group';
 
 // TODO: Make countries auto complete
-// TODO: Turn form into accordion to simplify
 // FIXME: Work around for bottomTime and Depth
+
+const radioButtonsData = [{
+    id: '1',
+    label: (
+        <Text style={{color: '#ffffff'}}>bar</Text>
+    ),
+    value: 'bar',
+}, {
+    id: '2',
+    label: (
+        <Text style={{color: '#ffffff'}}>psi</Text>
+    ),
+    value: 'psi',
+}]
+
 export class LogInfo extends Component {
     constructor(props){
         super(props);
@@ -32,8 +48,12 @@ export class LogInfo extends Component {
             BottomTemp: Number,
             tempUnit: '',
             startPressure: Number,
-            pressureUnit: 'bar',
+            pressureUnit: radioButtonsData,
             endPressure: Number,
+            bcd: '',
+            wetsuit: '',
+            fins: '',
+            weights: Number,
         };
 
         this.setDiveNumber = this.setDiveNumber.bind(this);
@@ -49,6 +69,14 @@ export class LogInfo extends Component {
         this.setAirTemp = this.setAirTemp.bind(this);
         this.setSurfaceTemp = this.setSurfaceTemp.bind(this);
         this.setBottomTemp = this.setBottomTemp.bind(this);
+        this.setStartPressure = this.setStartPressure.bind(this);
+        this.setEndPressure = this.setEndPressure.bind(this);
+        this.setPressureUnit = this.setPressureUnit.bind(this);
+        this.setBCD = this.setBCD.bind(this);
+        this.setWetsuit = this.setWetsuit.bind(this);
+        this.setFins = this.setFins.bind(this);
+        this.weights = this.setWeights.bind(this);
+        
     }
 
     setDiveNumber(newDiveNumber){
@@ -102,6 +130,35 @@ export class LogInfo extends Component {
 
     setBottomTemp(newBottomTemp){
         this.setState({bottomTime: newBottomTemp});
+    }
+
+    setStartPressure(newPessureIn){
+        this.setState({pressureIn: newPessureIn});
+    }
+
+    setEndPressure(newPressureOut){
+        this.setState({pressureOut: newPressureOut});
+    }
+    
+    setPressureUnit(newUnit){
+        this.setState({pressureUnit: newUnit});
+        console.log(this.state.pressureUnit);
+    }
+
+    setBCD(newBCD){
+        this.setState({bcd: newBCD});
+    }
+
+    setWetsuit(newWetsuit){
+        this.setState({wetsuit: newWetsuit});
+    }
+
+    setFins(newFins){
+        this.setState({fins: newFins});
+    }
+
+    setWeights(newWeights){
+        this.setState({weights: newWeights});
     }
 
     handleSaveButton(){
@@ -226,7 +283,42 @@ export class LogInfo extends Component {
                         onChangeText={this.setDepth}
                         returnKeyType="done"
                     />
-                    <Text style={styles.text}>Pressure in, pressure out</Text>
+                    <Text style={styles.subSectionTitle}>Pressures</Text>
+                    <View style={styles.Radio}>
+                        <Text style={styles.infoTitle}>
+                            Pressure Unit
+                        </Text>
+                        <RadioGroup 
+                            radioButtons={radioButtonsData}
+                            horizontal
+                            onChange={this.setPressureUnit}
+                        />
+                        <Text style={styles.text}>{this.pressureUnit}</Text>
+                    </View>
+                    <View style={styles.pressures}>
+                        <View style={styles.pressure}>
+                            <Text style={styles.infoTitle}>
+                                Start pressure:
+                            </Text>
+                            <Input 
+                                placeholder="Starting pressure"
+                                onChangeText={this.setStartPressure}
+                                returnKey="done"
+                                keyboardType="numeric"
+                            />
+                        </View>
+                        <View style={styles.pressure}>
+                            <Text style={styles.infoTitle}>
+                                End pressure:
+                            </Text>
+                            <Input 
+                                placeholder="End pressure"
+                                onChangeText={this.setEndPressure}
+                                returnKey="done"
+                                keyboardType="numeric"
+                            />
+                        </View>
+                    </View>
                     <Text></Text>
                     <Text style={styles.infoTitle}>
                         Visibility:
@@ -236,7 +328,7 @@ export class LogInfo extends Component {
                         onChangeText={this.setVisibility}
                         returnKeyType="done"
                     />
-                    <Text style={styles.infoTitle}>Temperatures</Text>
+                    <Text style={styles.subSectionTitle}>Temperatures</Text>
                     <View style={styles.temps}>
                         <View style={styles.temp}>
                             <Text style={styles.infoTitle}>Air:</Text>
@@ -267,7 +359,32 @@ export class LogInfo extends Component {
                         </View>
                     </View>
                     <Text style={styles.sectionTitle}>Dive Equipment Used</Text>
-                    <Text style={styles.text}>BCD, Wetsuit, Fins, Weights</Text>
+                    <Text style={styles.infoTitle}>
+                        BCD:
+                    </Text>
+                    <Input 
+                        placeholder="BCD"
+                        returnKeyType="done"
+                        onChangeText={this.setBCD}
+                    />
+                    <Text style={styles.infoTitle}>Wetsuit:</Text>
+                    <Input 
+                        placeholder="Wetsuit"
+                        returnKeyType="done"
+                        onChangeText={this.setWetsuit}
+                    />
+                    <Text style={styles.infoTitle}>Fins:</Text>
+                    <Input 
+                        placeholder="Fins"
+                        returnKeyType="done"
+                        onChangeText={this.setFins}
+                    />
+                    <Text style={styles.infoTitle}>Weights:</Text>
+                    <Input 
+                        placeholder="Weights"
+                        returnKeyType="done"
+                        onChangeText={this.setWeights}
+                    />
                 </View>
                 <Button 
                     title="Add Log"
@@ -325,13 +442,35 @@ const styles = StyleSheet.create({
     },
     button: {
         marginBottom: 100,
+        marginTop: 100,
     },
     sectionTitle: {
         justifyContent: 'center',
+        textAlign: 'center',
         fontWeight: 'bold',
         fontSize: 20,
         color: '#ffffff',
         marginBottom: 10,
-    }
+        marginTop: 10,
+    },
+    subSectionTitle: {
+        justifyContent: 'center',
+        textAlign: 'center',
+        fontWeight: 'bold',
+        color: '#ffffff',
+        marginBottom: 10,
+        marginTop: 10,
+    },
+    pressures: {
+        flexDirection: 'row',
+        flex: 1,
+    },
+    pressure: {
+        flex: 1,
+    },
+    Radio: {
+        alignContent: 'flex-start',
+        alignItems: 'flex-start',
+    },
 })
 export default LogInfo;

@@ -6,6 +6,7 @@ import { Header } from '../sections/Header';
 import {Input } from 'galio-framework';
 import LogModal from '../sections/LogModal';
 import LogInfo from '../sections/LogInfo';
+import Footer from '../sections/Footer';
 
 export class LogDive extends React.Component{
     render() {
@@ -22,6 +23,7 @@ export class LogDive extends React.Component{
                         Now log it so that you can see it later in your history
                     </Text>
                     <LogInfo />
+                    <Footer />
                 </ScrollView>
             </View>
         )
