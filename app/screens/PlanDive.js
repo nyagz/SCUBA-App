@@ -4,9 +4,10 @@ import { StyleSheet, View, Text, Modal } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 
 import { Header } from '../sections/Header';
-import PlanModal from '../sections/PlanModal';
 
-// TODO: Work on next
+import PlanModal from '../sections/PlanModal';
+import PlanInfo from '../sections/PlanInfo';
+import Footer from '../sections/Footer';
 
 export class PlanDive extends React.Component{
     render() {
@@ -20,22 +21,9 @@ export class PlanDive extends React.Component{
                         <Text style={styles.miniHeader}>
                             Ready to dive!
                         </Text>
-                        <Text style = {styles.text}>
-                            Dive's are planned using Bühlmann's decompression algorithm
-                        </Text>
-                        <Text style={styles.text}>
-                            The dives are planned based on your gas used, the maximum depth of your dive & the planned length of the dive
-                        </Text>
-                        <Text style={styles.text}>
-                            Gas used
-                        </Text>
-                        <Text style={styles.text}>
-                            Max depth
-                        </Text>
-                        <Text style={styles.text}>
-                            Total time
-                        </Text>
+                        <PlanInfo />
                     </ScrollView>
+                    <Footer />
                 </View>
             </View>
         )
