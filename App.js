@@ -11,6 +11,7 @@ import PlanDive from './app/screens/PlanDive';
 import LogDive from './app/screens/LogDive';
 import { navigationRef } from './rootNavigation';
 import DiveHistory from './app/screens/DiveHistory';
+import PlannedDive from './app/screens/PlannedDive';
 
 function App() {
   const Stack = createStackNavigator();
@@ -37,6 +38,12 @@ function App() {
           name = "history"
           component = {DiveHistory}
           options = {{title: 'Dive History', headerShown: false, gestureEnabled: true}}
+        />
+        <Stack.Screen
+          name="planned"
+          component = {PlannedDive}
+          options = {{title: 'Planned Dive', headerShown: false, gestureEnabled: true}}
+
         />
       </Stack.Navigator>
     </NavigationContainer>

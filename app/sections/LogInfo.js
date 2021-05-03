@@ -165,7 +165,7 @@ export class LogInfo extends Component {
         if(this.state.name === "" || this.state.country === "" || this.state.location === "" || this.state.bottomTime === 0 || this.state.depth === 0){
             Alert.alert("You must fill all mandatory fields before saving your dive log")
         } else{
-            Alert.alert("Figure out what I need to do here")
+            Alert.alert("Log added!")
         }
     }
 
