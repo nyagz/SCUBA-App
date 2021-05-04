@@ -17,7 +17,7 @@ export class Home extends React.Component{
                 <View style={styles.menu}>
                     <ScrollView>
                         <Text style={styles.text}>
-                            Welcome to Let's SCUBA Dive. An app for all you dive log needs!
+                            Welcome to Let's SCUBA Dive. An app for all you of your SCUBA diving needs!
                         </Text>
                         <Plan />
                         <Log />

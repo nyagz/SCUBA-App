@@ -18,7 +18,7 @@ export class Plan extends React.Component {
                     Plan a Dive
                 </Text>
                 <Text style={styles.description}>
-                    Plan an upcomming dive based on depth and time of dive. Will receive a log of decompression stops to take while ascending
+                    Plan an upcomming dive based on depth and time of dive. Will receive a log of decompression stops to take while ascending.
                 </Text>
                 <PlanButton />
             </View>

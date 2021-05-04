@@ -28,13 +28,13 @@ export class LogModal extends Component {
                 <View style={styles.centeredView}>
                     <View style={styles.modalView}>
                         <Text style={styles.modalText}>
-                            You've finished a dive, time to log it!
+                            You've finished a dive, time to log it.
                         </Text>
                         <Text style={styles.modalText}>
                             Think of this page as an equivalent to your dive log book. We all know how important our dive logs are. Whether it's to know what number dive we've reached to know if we qualify to try and get a new dive qualification or we just want to try to remember what we saw on an old dive it's good to keep track of all of the dives that you've had.
                         </Text>
                         <Text style={styles.modalText}>
-                            You can put all of that information here. All dives logged can be accessed from the history page so that you can reminise on all past dives.
+                            You can put all of that information here. All dives logged can be accessed from the history page so that you can reminisce on all past dives.
                         </Text>
                         <Text style={styles.modalText}>
                             

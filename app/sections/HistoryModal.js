@@ -31,16 +31,13 @@ export class HistoryModal extends Component {
                             Hello!
                         </Text>
                         <Text style={styles.modalText}>
-                            On this page you will be able to plan a scuba dive!
+                            On this page you will be able to see the logs for all of your past dives.
                         </Text>
                         <Text style={styles.modalText}>
-                            You can plan your dive using Bühlmann's decompression algorithm or using the Varying Permeability Model bubble method.
+                            Whether you want to check what number dive you're on or reminisce on the fish seen at a particular dive location. We've got you covered
                         </Text>
                         <Text style={styles.modalText}>
-                            Don't worry if you don't know what either of these are. All that matters is that we minimise the risk of you getting decompression sickness.    
-                        </Text>
-                        <Text style={styles.modalText}>
-                            To do this all we need from you is to let us know what gas mixes you plan on using on your dive, what your planned maximum depth is and the amount of time you plan on spending at that depth. We will sort out the rest!
+                            Don't worry if you haven't logged any dives yet. Just clock on the log button and it will take you to the page where all dive logs are added.
                         </Text>
                         <Pressable
                             style={[styles.button, styles.buttonClose]}

@@ -18,7 +18,7 @@ export class Log extends Component {
                     Log a dive
                 </Text>
                 <Text style={styles.description}>
-                    Log your dive data from a recent dive to view later in your dive history
+                    Log your dive data from a recent dive. This can be viewed later in your log history. 
                 </Text>
                 <LogButton />
             </View>

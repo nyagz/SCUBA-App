@@ -128,7 +128,7 @@ export class PlanInfo extends Component {
                                 />
                                 <Text style={styles.gasTitle}>Helium</Text>
                                 <Input 
-                                    placeholder="Helim"
+                                    placeholder="Helium"
                                     returnKeyType="done"
                                     keyboardType="numeric"
                                     onChangeText={this.setHelium}

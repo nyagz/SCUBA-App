@@ -8,7 +8,6 @@ import { ScrollView, TouchableWithoutFeedback } from 'react-native-gesture-handl
 import Autocomplete from 'react-native-autocomplete-input';
 import { Row } from 'react-native-table-component';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import { RadioButton } from 'react-native-paper';
 import { RadioGroup } from 'react-native-radio-buttons-group';
 
 // TODO: Make countries auto complete

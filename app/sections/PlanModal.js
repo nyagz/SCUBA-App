@@ -31,7 +31,7 @@ export class PlanModal extends Component {
                             Hello!
                         </Text>
                         <Text style={styles.modalText}>
-                            On this page you will be able to plan a scuba dive!
+                            On this page you will be able to plan a scuba dive.
                         </Text>
                         <Text style={styles.modalText}>
                             You can plan your dive using Bühlmann's decompression algorithm or using the Varying Permeability Model bubble method.
