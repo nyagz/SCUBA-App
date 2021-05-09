@@ -161,7 +161,8 @@ export class PlanInfo extends Component {
                         onValueChange={(itemValue, itemIndex) =>
                         this.setSelectedAlgorithm(itemValue)
                     }>
-                        <Picker.Item label="Bühlmann" value="b" />
+                        <Picker.Item label="Bühlmann ZHL16B" value="b" />
+                        <Picker.Item label="Bühlmann ZHL16C" value="c" />
                         <Picker.Item label="Varying Permeability Model" value="vpm" />
                     </Picker>
                     <Text style={styles.infoTitle}>
